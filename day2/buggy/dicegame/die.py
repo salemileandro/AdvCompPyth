@@ -3,7 +3,7 @@ import random
 
 def roll(dice):
     for die in dice:
-        # XXX: I don't even know what this function does
+        die.roll()
         continue
 
 class Die:
