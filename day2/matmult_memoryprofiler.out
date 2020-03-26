@@ -2,40 +2,40 @@ Filename: matmult.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
-     5   39.434 MiB   38.988 MiB   @profile
-     6                             def generate_matrix(n_rows, n_columns):
-     7   39.434 MiB    0.000 MiB       m = []
-     8   39.949 MiB    0.000 MiB       for i in range(n_rows):
-     9   39.949 MiB    0.258 MiB           m.append([random.randint(0,100) for r in range(n_columns)])
-    10   39.949 MiB    0.000 MiB       return m
+     4   39.266 MiB   38.816 MiB   @profile
+     5                             def generate_matrix(n_rows, n_columns):
+     6   39.266 MiB    0.000 MiB       m = []
+     7   39.781 MiB    0.000 MiB       for i in range(n_rows):
+     8   39.781 MiB    0.258 MiB           m.append([random.randint(0,100) for r in range(n_columns)])
+     9   39.781 MiB    0.000 MiB       return m
 
 
 Filename: matmult.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
-    12   39.949 MiB   39.949 MiB   @profile
-    13                             def generate_matrix_empty(n_rows, n_columns):
-    14   39.949 MiB    0.000 MiB       m = []
-    15   40.465 MiB    0.000 MiB       for i in range(n_rows):
-    16   40.465 MiB    0.258 MiB           m.append([0] * (n_columns))
-    17   40.465 MiB    0.000 MiB       return m
+    11   39.781 MiB   39.781 MiB   @profile
+    12                             def generate_matrix_empty(n_rows, n_columns):
+    13   39.781 MiB    0.000 MiB       m = []
+    14   40.297 MiB    0.000 MiB       for i in range(n_rows):
+    15   40.297 MiB    0.258 MiB           m.append([0] * (n_columns))
+    16   40.297 MiB    0.000 MiB       return m
 
 
 Filename: matmult.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
-    19   39.949 MiB   39.949 MiB   @profile
-    20                             def matmult(X, Y):
-    21   40.465 MiB   40.465 MiB       result = generate_matrix_empty(len(X), len(Y[0]))
-    22                                 # iterate through rows of X 
-    23   41.023 MiB    0.000 MiB       for i in range(len(X)):
-    24                                     # iterate through columns of Y
-    25   41.023 MiB    0.000 MiB           for j in range(len(Y[0])):
-    26                                         # iterate through rows of Y
-    27   41.023 MiB    0.258 MiB               for k in range(len(Y)):
-    28   41.023 MiB    0.000 MiB                   result[i][j] += X[i][k] * Y[k][j]
-    29                                 return result
+    18   39.781 MiB   39.781 MiB   @profile
+    19                             def matmult(X, Y):
+    20   40.297 MiB   40.297 MiB       result = generate_matrix_empty(len(X), len(Y[0]))
+    21                                 # iterate through rows of X 
+    22   40.602 MiB    0.000 MiB       for i in range(len(X)):
+    23                                     # iterate through columns of Y
+    24   40.602 MiB    0.000 MiB           for j in range(len(Y[0])):
+    25                                         # iterate through rows of Y
+    26   40.602 MiB    0.000 MiB               for k in range(len(Y)):
+    27   40.602 MiB    0.258 MiB                   result[i][j] += X[i][k] * Y[k][j]
+    28                                 return result
 
 

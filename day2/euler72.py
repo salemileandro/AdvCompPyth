@@ -32,7 +32,7 @@ def factorize(n,primes):
         factors.append(n)
     return factors
 
-    
+@profile 
 def phi(n,primes):
     factors = factorize(n,primes)
     p = 1
@@ -59,8 +59,13 @@ def fast_phi(n,primes):
     return phi
 
 primes = gen_primes(1000)
-m = 10000
+m = 1000
 #m = 8
+
+fraq = 0
+for i in range(2,m+1):
+    fraq += phi(i,primes)
+
 fraq = 0
 for i in range(2,m+1):
     fraq += fast_phi(i,primes)
